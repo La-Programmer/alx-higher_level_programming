@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 for i in range(122, 96, -1):
-    if i % 2 == 0:
-        print(chr(i), end="")
-    else:
-        print(chr(i - 32), end="")
+    j = i
+    if i % 2 != 0:
+        j -= 32
+    print('{}'.format(chr(j)), end="")
