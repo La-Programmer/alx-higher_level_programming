@@ -4,12 +4,12 @@ from calculator_1 import add, sub, mul, div
 if __name__ == "__main__":
     operators = ['+', '-', '*', '/']
     index = 10
-    a = argv[1]
-    b = argv[3]
-    op = argv[2]
     if len(argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
+    a = argv[1]
+    b = argv[3]
+    op = argv[2]
     for i in range(len(operators)):
         if op == operators[i]:
             index = (index - 10) + i
