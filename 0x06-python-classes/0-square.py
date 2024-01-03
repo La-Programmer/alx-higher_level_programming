@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""python3 -c 'print(__import__("0-square").__doc__)'
+"""
 class Square:
-    """Square class
-
-    This module creates a square class that passes
+    """python3 -c 'print(__import__("my_module").MyClass.__doc__)'
     """
     pass
