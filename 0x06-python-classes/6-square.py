@@ -59,7 +59,7 @@ class Square:
         i = 0
         if self.__size == 0:
             print("")
-            break
+            return
         while (y < self.__position[1]):
             print("")
             y += 1
