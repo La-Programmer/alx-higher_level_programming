@@ -9,7 +9,8 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         if isinstance(position, tuple) and len(position) == 2:
-            self.__position = position
+            if position[0] > 0 and position[1] > 0:
+                self.__position = position
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 
@@ -56,6 +57,9 @@ class Square:
         """
         y = 0
         i = 0
+        if self.__size == 0:
+            print("")
+            break
         while (y < self.__position[1]):
             print("")
             y += 1
@@ -70,5 +74,3 @@ class Square:
                 j += 1
             print("")
             i += 1
-        if (self.__size == 0):
-            print("")
