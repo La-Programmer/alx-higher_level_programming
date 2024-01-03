@@ -17,7 +17,7 @@ class Square:
         return self.__size
 
     @property
-    def position(value):
+    def position(self):
         """python3 -c 'print(__import__("6-square").position.__doc__)'
         """
         return self.__position
