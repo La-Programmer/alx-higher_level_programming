@@ -4,6 +4,8 @@
 
 
 class Square:
+    """python3 -c 'print(__import__("2-square").Square.__doc__)'
+    """
     @staticmethod
     def isfloat(num):
         """python3 -c 'print(__import__("Square").isfloat.__doc__)'
