@@ -1,6 +1,10 @@
 #!/usr/bin/python3
+"""python3 -c 'print(__import__("0-add_integer").__doc__)'
+"""
+
+
 def add_integer(a, b=98):
-    """print(__import__("0-add_integer").__doc__)
+    """python3 -c 'print(__import__("0-add_integer").add_integer.__doc__)'
     """
 
     type_arr = [int, float]
