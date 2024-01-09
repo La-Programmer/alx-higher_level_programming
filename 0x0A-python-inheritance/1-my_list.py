@@ -6,7 +6,5 @@
 class MyList(list):
     """python3 -c 'print(__import__("1-my_list.py").MyList.__doc__)'
     """
-    
-
     def print_sorted(self):
         print(sorted(self))
