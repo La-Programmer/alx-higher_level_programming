@@ -4,8 +4,8 @@
 
 
 def inherits_from(obj, a_class):
-    """python3 -c 'print(__import__("4-inherits_from.py").inherits_from.__doc__)'
+    """python3 -c 'print(__import__("4-inherits").inherits_from.__doc__)'
     """
-    if isinstance(obj, a_class) or issubclass(obj, a_class):
+    if issubclass(type(obj), a_class):
         return True
     return False
