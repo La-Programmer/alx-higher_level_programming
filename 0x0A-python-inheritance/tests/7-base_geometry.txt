@@ -1,0 +1,35 @@
+>>> import doctest
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("height", 13)
+>>> bg.integer_validator("volume", 98990988)
+>>> try:
+...     bg.integer_validator("breadth", -9087)
+... except Exception as e:
+...     print(e)
+...
+breadth must be greater than 0
+>>> try:
+...     bg.integer_validator("length", "Taylor")
+... except Exception as e:
+...     print(e)
+...
+length must be an integer
+>>> try:
+...     bg.integer_validator("length", True)
+... except Exception as e:
+...     print(e)
+...
+length must be an integer
+>>> try:
+...     bg.integer_validator("length", "String")
+... except Exception as e:
+...     print(e)
+...
+length must be an integer
+>>> try:
+...     bg.integer_validator("length", 7.0909)
+... except Exception as e:
+...     print(e)
+...
+length must be an integer
