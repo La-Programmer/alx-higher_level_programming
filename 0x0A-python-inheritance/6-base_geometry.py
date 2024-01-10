@@ -4,5 +4,7 @@
 
 
 class BaseGeometry:
+    """python3 -c 'print(_import__("my_module").BaseGeometry.__doc__)'
+    """
     def area(self):
         raise Exception("area() is not implemented")
