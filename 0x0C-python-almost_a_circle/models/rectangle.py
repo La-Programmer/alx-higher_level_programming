@@ -114,10 +114,16 @@ class Rectangle(Base):
     def display(self):
         """python3 -c print(__import__("rectangle.py").display.__doc__)
         """
-        for i in range(self.__height):
-            for i in range(self.__width):
+        for i in range(self.__y):
+            print("")
+
+        for j in range(self.__height):
+            for k in range(self.__x):
+                print(" ", end="")
+            for l in range(self.__width):
                 print("#", end="")
             print("")
+            j += 1
 
     def __str__(self):
         """python3 -c print(__import__("rectangle.py").__str__.__doc__)
