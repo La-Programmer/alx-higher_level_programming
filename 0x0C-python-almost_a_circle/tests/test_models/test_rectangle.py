@@ -15,8 +15,8 @@ class TestRectangle(unittest.TestCase):
         """python3 -c print(__import__("test_rectangle.py").setUp.__doc__)
         """
         self.r1 = Rectangle(10, 2)
-        self.r2 = Rectangle(2, 10)
-        self.r3 = Rectangle(10, 2, 0, 0, 12)
+        self.r2 = Rectangle(12, 10)
+        self.r3 = Rectangle(10, 90, 0, 0, 12)
 
     def test_rectangleId(self):
         """python3 -c print(__import__("test_rectangle").rectangleId.__doc__)
@@ -25,6 +25,11 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r2.id, 2)
         self.assertEqual(self.r3.id, 12)
 
+    def test_rectangleArea(self):
+        self.assertEqual(self.r1.area(), 20)
+        self.assertEqual(self.r2.area(), 120)
+        self.assertEqual(self.r3.area(), 900)
+        
     def test_rectangleType(self):
         """python3 -c print(__import__("test_rectangle").rectangleType.__doc__)
         """
@@ -82,4 +87,4 @@ class TestRectangle(unittest.TestCase):
     def tearDown(self):
         """python3 -c print(__import__("test_rectangle").tearDown.__doc__)
         """
-        pass
+        del self.r1, self.r2, self.r3
