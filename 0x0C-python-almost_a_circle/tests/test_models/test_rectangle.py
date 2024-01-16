@@ -108,13 +108,21 @@ class TestRectangle(unittest.TestCase):
         b1 = b.width
         b2 = b.height
         b3 = b.x
-        c1 = c.width
-        c2 = c.height
-        c3 = c.x
-        c4 = c.y
+        d = c.id
+        e = c.width
+        f = c.height
+        g = c.x
+        h = c.y
         self.assertTrue(a.id == 10 and a.width == 3)
         self.assertTrue(b.id == 21 and b1 == 10 and b2 == 8 and b3 == 16)
-        self.assertTrue(c.id == 1 and c1 == 20 and c2 == 10 and c3 == 6 and c4 == 9)
+        self.assertTrue(d == 1 and e == 20 and f == 10 and g == 6 and h == 9)
+        a.update(height=1, id=900)
+        b.update(x=9, y=0)
+        c.update(y=10, x=19, width=23, height=99)
+        self.assertTrue(a.height == 1 and a.id == 900)
+        self.assertTrue(b.x == 9 and b.y == 0)
+        f = c.height
+        self.assertTrue(c.y == 10 and c.x == 19 and c.width == 23 and f == 99)
 
     @classmethod
     def tearDownClass(self):

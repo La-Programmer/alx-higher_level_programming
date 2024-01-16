@@ -136,11 +136,19 @@ class Rectangle(Base):
         h = self.__height
         return f'[{name}] ({id}) {x}/{y} - {w}/{h}'
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
+        """python3 -c print(__import__("rectangle.py").update.__doc__)
+        """
         attributes1 = ['id', '_Rectangle__width', '_Rectangle__height']
         attributes2 = ['_Rectangle__x', '_Rectangle__y']
         attributes = attributes1 + attributes2
-
-        for i in range(min(len(attributes), len(args))):
-            if args[i]:
-                setattr(self, attributes[i], args[i])
+        if len(args) > 0:
+            for i in range(min(len(attributes), len(args))):
+                if args[i]:
+                    setattr(self, attributes[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    setattr(self, key, value)
+                else:
+                    setattr(self, '_Rectangle__' + key, value)
