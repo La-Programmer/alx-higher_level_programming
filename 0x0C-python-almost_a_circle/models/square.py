@@ -23,3 +23,20 @@ class Square(Rectangle):
         y = self.y
         size = self.width
         return f'[{name}] ({id}) {x}/{y} - {size}'
+
+    @property
+    def size(self):
+        """python3 -c print(__import__("rectangle.py").width.__doc__)
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """python3 -c print(__import__("rectangle.py").width.__doc__)
+        """
+        if value.__class__ is not int:
+            raise TypeError("width must be an integer")
+        elif value <= 0:
+            raise ValueError("width must be > 0")
+        self.width = value
+        self.height = value
