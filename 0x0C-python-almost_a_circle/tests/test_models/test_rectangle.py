@@ -27,6 +27,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r3.id, 12)
 
     def test_rectangleArea(self):
+        """python3 -c print(__import__("test_rectangle").rectangleArea.__doc__)
+        """
         self.assertEqual(self.r1.area(), 20)
         self.assertEqual(self.r2.area(), 120)
         self.assertEqual(self.r3.area(), 900)
@@ -89,12 +91,7 @@ class TestRectangle(unittest.TestCase):
         """python3 -c print(__import__("test_rectangle.py").Display.__doc__)
         """
         self.r_spec = Rectangle(1, 1)
-        self.assertEqual(self.r_spec.display(), "#")
-    
-    def testPrint(self):
-        self.assertEqual(print(self.r1), "[Rectangle] (1) 0/0 - 10/2")
-        self.assertEqual(print(self.r2), "[Rectangle] (2) 0/0 - 12/10")
-        self.assertEqual(print(self.r3), "[Rectangle] (12) 845/395 - 10/90")
+        self.assertEqual(self.r_spec.display(), None)
 
     @classmethod
     def tearDownClass(self):

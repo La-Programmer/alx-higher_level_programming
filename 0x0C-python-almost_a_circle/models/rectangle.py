@@ -122,4 +122,10 @@ class Rectangle(Base):
     def __str__(self):
         """python3 -c print(__import__("rectangle.py").__str__.__doc__)
         """
-        return f'[{self.__class__.__name__}] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}'
+        name = self.__class__.__name__
+        id = self.id
+        x = self.__x
+        y = self.__y
+        w = self.__width
+        h = self.__height
+        return f'[{name}] ({id}) {x}/{y} - {w}/{h}'
