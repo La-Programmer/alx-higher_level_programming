@@ -17,7 +17,7 @@ class TestRectangle(unittest.TestCase):
         """
         self.r1 = Rectangle(10, 2)
         self.r2 = Rectangle(12, 10)
-        self.r3 = Rectangle(10, 90, 0, 0, 12)
+        self.r3 = Rectangle(10, 90, 845, 395, 12)
 
     def test_rectangleId(self):
         """python3 -c print(__import__("test_rectangle").rectangleId.__doc__)
@@ -84,6 +84,17 @@ class TestRectangle(unittest.TestCase):
 
         exception = context.exception
         self.assertEqual(str(exception), "y must be >= 0")
+
+    def testDisplay(self):
+        """python3 -c print(__import__("test_rectangle.py").Display.__doc__)
+        """
+        self.r_spec = Rectangle(1, 1)
+        self.assertEqual(self.r_spec.display(), "#")
+    
+    def testPrint(self):
+        self.assertEqual(print(self.r1), "[Rectangle] (1) 0/0 - 10/2")
+        self.assertEqual(print(self.r2), "[Rectangle] (2) 0/0 - 12/10")
+        self.assertEqual(print(self.r3), "[Rectangle] (12) 845/395 - 10/90")
 
     @classmethod
     def tearDownClass(self):
