@@ -18,6 +18,9 @@ class TestRectangle(unittest.TestCase):
         self.r1 = Rectangle(10, 2)
         self.r2 = Rectangle(12, 10)
         self.r3 = Rectangle(10, 90, 845, 395, 12)
+        self.r6 = Rectangle(12, 13, 8)
+        self.r7 = Rectangle(98, 99, 100)
+        self.r8 = Rectangle(81, 9, 11)
 
     def test_rectangleId(self):
         """python3 -c print(__import__("test_rectangle").rectangleId.__doc__)
@@ -87,11 +90,31 @@ class TestRectangle(unittest.TestCase):
         exception = context.exception
         self.assertEqual(str(exception), "y must be >= 0")
 
-    def testDisplay(self):
+    def test_Display(self):
         """python3 -c print(__import__("test_rectangle.py").Display.__doc__)
         """
         self.r_spec = Rectangle(1, 1)
         self.assertEqual(self.r_spec.display(), None)
+
+    def test_Update(self):
+        """python3 -c print(__import__("test_rectangle.py").Update.__doc__)
+        """
+        self.r6.update(10, 3)
+        self.r7.update(21, 10, 8, 16)
+        self.r8.update(1, 20, 10, 6, 9)
+        a = self.r6
+        b = self.r7
+        c = self.r8
+        b1 = b.width
+        b2 = b.height
+        b3 = b.x
+        c1 = c.width
+        c2 = c.height
+        c3 = c.x
+        c4 = c.y
+        self.assertTrue(a.id == 10 and a.width == 3)
+        self.assertTrue(b.id == 21 and b1 == 10 and b2 == 8 and b3 == 16)
+        self.assertTrue(c.id == 1 and c1 == 20 and c2 == 10 and c3 == 6 and c4 == 9)
 
     @classmethod
     def tearDownClass(self):
