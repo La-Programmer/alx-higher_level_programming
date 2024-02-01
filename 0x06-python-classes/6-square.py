@@ -7,13 +7,15 @@ class Square:
     """python3 -c 'print(__import__("6-square").Square.__doc__)'
     """
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        if isinstance(position, tuple) and len(position) == 2:
-            if isinstance(position[0], int) and isinstance(position[1], int):
-                if position[0] >= 0 and position[1] >= 0:
-                    self.__position = position
+        if size >= 0:
+            self.__size = size
         else:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError("size must be >= 0")
+        if isinstance(position, tuple) and len(position) == 2:
+            if all([(isinstance(x, int) and x >= 0) for x in position]):
+                    self.__position = position
+            else:
+                raise TypeError("position must be a tuple of 2 positive integers")
 
     @property
     def size(self):
@@ -44,11 +46,10 @@ class Square:
         """python3 -c 'print(__import__("6-square").position.__doc__)'
         """
         if isinstance(value, tuple) and len(value) == 2:
-            if isinstance(value[0], int) and isinstance(value[1], int):
-                if value[0] >= 0 and value[1] >= 0:
+            if all(((isinstance(x, int) and x >= 0) for x in value)):
                     self.__position = value
-        else:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            else:
+                raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         """python3 -c 'print(__import__("6-square").area.__doc__)'
