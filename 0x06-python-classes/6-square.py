@@ -16,6 +16,8 @@ class Square:
                     self.__position = position
             else:
                 raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     @property
     def size(self):
@@ -50,6 +52,8 @@ class Square:
                     self.__position = value
             else:
                 raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         """python3 -c 'print(__import__("6-square").area.__doc__)'
