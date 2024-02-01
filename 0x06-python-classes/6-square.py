@@ -9,8 +9,9 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         if isinstance(position, tuple) and len(position) == 2:
-            if position[0] >= 0 and position[1] >= 0:
-                self.__position = position
+            if isinstance(position[0], int) and isinstance(position[1], int):
+                if position[0] >= 0 and position[1] >= 0:
+                    self.__position = position
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 
@@ -43,8 +44,9 @@ class Square:
         """python3 -c 'print(__import__("6-square").position.__doc__)'
         """
         if isinstance(value, tuple) and len(value) == 2:
-            if value[0] >= 0 and value[1] >= 0:
-                self.__position = value
+            if isinstance(value[0], int) and isinstance(value[1], int):
+                if value[0] >= 0 and value[1] >= 0:
+                    self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 
@@ -56,21 +58,22 @@ class Square:
     def my_print(self):
         """python3 -c 'print(__import__("6-square").my_print.__doc__)'
         """
-        y = 0
-        i = 0
-        while (y < self.position[1]):
-            print("")
-            y += 1
-        while (i < self.size):
-            j = 0
-            x = 0
-            while (x < self.position[0]):
-                print(" ", end="")
-                x += 1
-            while (j < self.size):
-                print("#", end="")
-                j += 1
-            i += 1
-            print("")
         if self.size == 0:
             print("")
+        else:
+            y = 0
+            i = 0
+            while (y < self.position[1]):
+                print("")
+                y += 1
+            while (i < self.size):
+                j = 0
+                x = 0
+                while (x < self.position[0]):
+                    print(" ", end="")
+                    x += 1
+                while (j < self.size):
+                    print("#", end="")
+                    j += 1
+                i += 1
+                print("")
