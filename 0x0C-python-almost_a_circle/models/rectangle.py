@@ -154,4 +154,6 @@ class Rectangle(Base):
                     setattr(self, '_Rectangle__' + key, value)
 
     def to_dictionary(self):
+        """python3 -c print(__import__("rectangle.py").to_dictionary.__doc__)
+        """
         return {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
