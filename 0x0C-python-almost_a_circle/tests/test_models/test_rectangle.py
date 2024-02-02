@@ -123,6 +123,13 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(b.x == 9 and b.y == 0)
         f = c.height
         self.assertTrue(c.y == 10 and c.x == 19 and c.width == 23 and f == 99)
+    
+    def test_toDict(self):
+        """python3 -c print(__import__("test_rectangle.py").toDict.__doc__)
+        """
+        self.rect = Rectangle(10, 20, 3, 5, 44)
+        new_dict = self.rect.to_dictionary()
+        self.assertEqual(new_dict, {'id': 44, 'width': 10, 'height': 20, 'x': 3, 'y': 5})
 
     @classmethod
     def tearDownClass(self):

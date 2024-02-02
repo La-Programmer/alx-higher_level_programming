@@ -56,7 +56,7 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         elif value <= 0:
             raise ValueError("width must be > 0")
-        self.__width = value
+        self.width = value
 
     @property
     def height(self):
@@ -72,7 +72,7 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         elif value <= 0:
             raise ValueError("height must be > 0")
-        self.__height = value
+        self.height = value
 
     @property
     def x(self):
@@ -88,7 +88,7 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         elif value < 0:
             raise ValueError("x must be >= 0")
-        self.__x = value
+        self.x = value
 
     @property
     def y(self):
@@ -104,23 +104,23 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         elif value < 0:
             raise ValueError("y must be >= 0")
-        self.__y = value
+        self.y = value
 
     def area(self):
         """python3 -c print(__import__("rectangle.py").area.__doc__)
             """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """python3 -c print(__import__("rectangle.py").display.__doc__)
         """
-        for i in range(self.__y):
+        for i in range(self.y):
             print("")
 
-        for j in range(self.__height):
-            for k in range(self.__x):
+        for j in range(self.height):
+            for k in range(self.x):
                 print(" ", end="")
-            for a in range(self.__width):
+            for a in range(self.width):
                 print("#", end="")
             print("")
             j += 1
@@ -130,10 +130,10 @@ class Rectangle(Base):
         """
         name = self.__class__.__name__
         id = self.id
-        x = self.__x
-        y = self.__y
-        w = self.__width
-        h = self.__height
+        x = self.x
+        y = self.y
+        w = self.width
+        h = self.height
         return f'[{name}] ({id}) {x}/{y} - {w}/{h}'
 
     def update(self, *args, **kwargs):
@@ -152,3 +152,6 @@ class Rectangle(Base):
                     setattr(self, key, value)
                 else:
                     setattr(self, '_Rectangle__' + key, value)
+
+    def to_dictionary(self):
+        return {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
