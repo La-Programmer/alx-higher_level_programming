@@ -156,4 +156,8 @@ class Rectangle(Base):
     def to_dictionary(self):
         """python3 -c print(__import__("rectangle.py").to_dictionary.__doc__)
         """
-        return {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
+        return {'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y}
