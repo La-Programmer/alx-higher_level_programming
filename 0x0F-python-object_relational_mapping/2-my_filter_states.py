@@ -13,9 +13,9 @@ def run():
 
     db = MySQLdb.connect(host='localhost', user=u, passwd=p, db=d, port=3306)
     cur = db.cursor()
-    sql = f"""SELECT states.id AS id,
+    sql = """SELECT states.id AS id,
     states.name AS name
-    FROM states WHERE name='{search_var}' ORDER BY id ASC"""
+    FROM states WHERE name='{}' ORDER BY id ASC""".format(search_var)
     cur.execute(sql)
 
     rows = cur.fetchall()
