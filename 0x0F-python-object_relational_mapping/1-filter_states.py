@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+"""MODULE 1 FOR FILTER STATE NAMES ACCORDING TO A SEARCH QUERY"""
 import MySQLdb
 import sys
 
@@ -16,7 +17,7 @@ def run():
     SELECT states.id AS id,
     states.name AS name
     FROM states WHERE name LIKE 'N%'
-    """
+    ORDER BY id ASC"""
     cur.execute(sql)
 
     rows = cur.fetchall()
