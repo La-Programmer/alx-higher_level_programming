@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+"""MODULE 0 TO SELECT ALL THE STATES FROM A DATABASE"""
 import sys
 import MySQLdb
 
