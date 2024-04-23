@@ -2,7 +2,9 @@
 
 const request = require('request');
 
-const url = 'https://swapi-api.alx-tools.com/api/films';
+const getCmdArgs = () => process.argv.slice(2);
+
+const url = getCmdArgs()[0];
 
 request(url, (err, res, body) => {
   if (err) {
