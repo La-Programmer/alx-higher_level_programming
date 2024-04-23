@@ -12,12 +12,13 @@ request(url, (err, res, body) => {
   } else {
     const result = JSON.parse(body);
     const movieList = result.results;
-    console.log(movieList)
+    // console.log(movieList)
     let count = 0;
     for (let i = 0; i < movieList.length; i++) {
       for (let j = 0; j < movieList[i].characters.length; j++) {
         // console.log(movieList[i].characters[j]);
         if (movieList[i].characters[j].includes('18')) {
+            console.log("Incrementing the count");
           count++;
           break;
         }
