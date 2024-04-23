@@ -12,6 +12,6 @@ request(url, (err, res, body) => {
   if (err) {
     console.log(err);
   } else {
-    console.log(body);
+    console.log(body.title);
   }
 });
