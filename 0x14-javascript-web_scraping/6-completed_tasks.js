@@ -15,7 +15,7 @@ request(url, (err, res, body) => {
     let user = 0;
     for (let i = 0; i < bodyJson.length; i++) {
       if (user !== bodyJson[i].userId && bodyJson[i].completed === true) {
-        // console.log(`Is user: ${user} equal to apiUser: ${bodyJson[i].userId}`)
+        console.log(`Is user: ${user} equal to apiUser: ${bodyJson[i].userId}`);
         user = bodyJson[i].userId;
         result[user] = 1;
       } else if (user === bodyJson[i].userId && bodyJson[i].completed === true) {
