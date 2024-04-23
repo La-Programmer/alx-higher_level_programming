@@ -18,12 +18,12 @@ request(url, (err, res, body) => {
       for (let j = 0; j < movieList[i].characters.length; j++) {
         // console.log(movieList[i].characters[j]);
         if (movieList[i].characters[j].includes('18')) {
-            console.log("Incrementing the count");
+            // console.log("Incrementing the count");
           count++;
           break;
         }
       }
     }
-    return count;
+    console.log(count);
   }
 });
