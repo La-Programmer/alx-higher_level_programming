@@ -16,6 +16,7 @@ request(url, (err, res, body) => {
     console.log(result.characters);
     for (let i = 0; i < result.characters.length; i++) {
       const newUrl = result.characters[i];
+      console.log(newUrl);
       request(newUrl, (err, res, body) => {
         if (err) {
           console.log(err);
