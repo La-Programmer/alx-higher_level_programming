@@ -10,6 +10,17 @@ request(url, (err, res, body) => {
   if (err) {
     console.log(err);
   } else {
-    console.log(body);
+    const result = {};
+    const bodyJson = JSON.parse(body);
+    let user = 0;
+    for (let i = 0; i < bodyJson.length; i++) {
+      if (user !== bodyJson[i].userId && bodyJson[i].completed === true) {
+        user = bodyJson[i].userId;
+        result.user = 1;
+      } else if (user === bodyJson[i].userId && bodyJson[i].completed === true) {
+        result.user += 1;
+      }
+    }
+    console.log(result);
   }
 });
