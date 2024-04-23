@@ -12,7 +12,7 @@ request(url, (err, res, body) => {
   if (err) {
     console.log(err);
   } else {
-    result = JSON.parse(body);
+    const result = JSON.parse(body);
     console.log(result.title);
   }
 });
