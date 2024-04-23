@@ -15,8 +15,8 @@ request(url, (err, res, body) => {
     console.log(movieList)
     let count = 0;
     for (let i = 0; i < movieList.length; i++) {
-      for (let j = 0; i < movieList[i].characters.length; j++) {
-        console.log(movieList[i].characters[j]);
+      for (let j = 0; j < movieList[i].characters.length; j++) {
+        // console.log(movieList[i].characters[j]);
         if (movieList[i].characters[j].includes('18')) {
           count++;
           break;
